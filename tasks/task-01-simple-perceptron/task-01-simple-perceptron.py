@@ -14,7 +14,7 @@ class Perceptron:
         return np.where(x >= 0, 1, -1)
 
     def predict(self, X):
-        X_with_bias = np.hstack([np.ones((X.shape[0], 1)), X])
+        X_with_bias = np.hstack([np.ones((X.shape[0], 1)), X]) #Adding bias term (1) to input features samples
         linear_output = np.dot(X_with_bias, self.weights)
 
         return self.activation(linear_output)
