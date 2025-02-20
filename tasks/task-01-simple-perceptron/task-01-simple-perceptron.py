@@ -11,19 +11,23 @@ class Perceptron:
         self.epochs = epochs
 
     def activation(self, x):
-        ### START CODE HERE ###
-        ### TODO
-        ### END CODE HERE ###
+        return np.where(x >= 0, 1, -1)
 
     def predict(self, X):
-        ### START CODE HERE ###
-        ### TODO
-        ### END CODE HERE ###
+        X_with_bias = np.hstack([np.ones((X.shape[0], 1)), X])
+        linear_output = np.dot(X_with_bias, self.weights)
+
+        return self.activation(linear_output)
 
     def fit(self, X, y):
-        ### START CODE HERE ###
-        ### TODO
-        ### END CODE HERE ###
+        X_with_bias = np.hstack([np.ones((X.shape[0], 1)), X]) #Adding bias term (1) to input features samples
+        
+        for epoch in range(self.epochs):
+            for i in range(X_with_bias.shape[0]):
+                prediction = self.activation(np.dot(X_with_bias[i], self.weights))
+                
+                if prediction != y[i]:
+                    self.weights += self.learning_rate * y[i] * X_with_bias[i]
 
 def generate_data(seed, samples, noise):
     """
