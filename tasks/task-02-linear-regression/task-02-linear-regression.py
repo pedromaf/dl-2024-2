@@ -38,10 +38,13 @@ def solve_linear_regression(X_train, y_train):
     Computes the linear regression coefficients using the closed-form, mathematical solution.
     Students must complete this function using only linear algebra.
     """
-    ### START CODE HERE ###
-    ### TODO
-    ### END CODE HERE ###
-    
+    Xb = np.c_[np.ones((len(X_train), 1)), X_train]
+    Xb_T = np.transpose(Xb)
+    Xb_T_Xb = np.dot(Xb_T, Xb)
+    Xb_T_Xb_inv = np.linalg.inv(Xb_T_Xb)
+    Xb_T_y = np.dot(Xb_T, y_train)
+    b_hat, m_hat = np.dot(Xb_T_Xb_inv, Xb_T_y)
+
     return m_hat, b_hat  # Return slope and intercept
 
 # Example use case (to be replaced by your script when evaluating the students' code)
