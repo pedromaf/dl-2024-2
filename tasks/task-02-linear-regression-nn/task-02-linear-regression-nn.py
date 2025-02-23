@@ -41,10 +41,18 @@ def solve_linear_regression_nn(X_train, y_train, epochs=100, learning_rate=0.01)
     """
     Computes the linear regression coefficients using a neural network with a single neuron.
     """
-    ### START CODE HERE ###
-    ### TODO
-    ### END CODE HERE ###
+    X_train = X_train.reshape(-1, 1)
+    y_train = y_train.reshape(-1, 1)
     
+    model = keras.Sequential([
+        keras.layers.Dense(1, input_shape=(1,))
+    ])
+    
+    model.compile(optimizer=keras.optimizers.SGD(learning_rate=learning_rate),
+                  loss='mean_squared_error')
+ 
+    model.fit(X_train, y_train, epochs=epochs, verbose=0)
+
     return model
 
 # Example use case (to be replaced by your script when evaluating the students' code)
