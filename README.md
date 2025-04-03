@@ -25,6 +25,9 @@ To provide students with a deep understanding of the concepts, architectures, an
 1. [Goodfellow, I., Deep Learning Book](https://www.deeplearningbook.org/), 2016.
 1. [Dive Into Deep Learning](https://d2l.ai/index.html).
 
+## Repositories
+1. [Deep-Learning-With-Pytorch](https://github.com/matheuslevi11/Deep-Learning-With-Pytorch). By @[matheuslevi11](https://github.com/matheuslevi11).
+
 ## Tools
 - [SciKit-Learn](https://scikit-learn.org/stable/).
 - [TensorFlow](https://www.tensorflow.org/).
