@@ -5,7 +5,6 @@
 1. Observação; O livro oferece o seguinte repositório contendo os notebooks correspondentes ao conteúdo teórico: [Github repository](https://github.com/fchollet/deep-learning-with-python-notebooks).
 
 ## 2. Atividade extra
-Objetivo: Somente a primeira pessoa que entregar receberá 2.0 pontos a mais na AB1.
 1. Considere o notebook do autor, escrito em TensorFlow, que corresponde ao captulo 05 do livro: [https://github.com/fchollet/deep-learning-with-python-notebooks/blob/master/chapter05_fundamentals-of-ml.ipynb](https://github.com/fchollet/deep-learning-with-python-notebooks/blob/master/chapter05_fundamentals-of-ml.ipynb).
 1. "Traduzir" os códigos do [notebook original](https://github.com/fchollet/deep-learning-with-python-notebooks/blob/master/chapter05_fundamentals-of-ml.ipynb) (que usa TensorFlow) para PyTorch e submeter um PR para o repositório [Deep-Learning-With-Pytorch](https://github.com/matheuslevi11/Deep-Learning-With-Pytorch), pertencente ao @[matheuslevi11](https://github.com/matheuslevi11).
 1. O Matheus vai validar a submissão e, a primeira pessoa que efetuar a submissão corretamente terá concluído a "Atividade extra".
