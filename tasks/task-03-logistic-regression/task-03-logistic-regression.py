@@ -4,29 +4,36 @@ from sklearn.datasets import make_blobs
 
 class LogisticNeuron:
     def __init__(self, input_dim, learning_rate=0.1, epochs=1000):
-        ### START CODE HERE ###
-        ### TODO
-        ### END CODE HERE ###
+        self.weights = np.random.randn(input_dim)
+        self.bias = np.random.randn(1)
+        self.learning_rate = learning_rate
+        self.epochs = epochs
+        self.loss_history = []
     
     def sigmoid(self, z):
-        ### START CODE HERE ###
-        ### TODO
-        ### END CODE HERE ###
+        return 1 / (1 + np.exp(-z))
     
     def predict_proba(self, X):
-        ### START CODE HERE ###
-        ### TODO
-        ### END CODE HERE ###
+        z = np.dot(X, self.weights) + self.bias
+        return self.sigmoid(z)
     
     def predict(self, X):
-        ### START CODE HERE ###
-        ### TODO
-        ### END CODE HERE ###
+        probabilities = self.predict_proba(X)
+        return (probabilities >= 0.5).astype(int)
     
     def train(self, X, y):
-        ### START CODE HERE ###
-        ### TODO
-        ### END CODE HERE ###
+        for epoch in range(self.epochs):
+            z = np.dot(X, self.weights) + self.bias
+            y_pred = self.sigmoid(z)
+            
+            loss = -np.mean(y * np.log(y_pred) + (1 - y) * np.log(1 - y_pred))
+            self.loss_history.append(loss)
+            
+            dw = np.dot(X.T, (y_pred - y)) / len(y)
+            db = np.mean(y_pred - y)
+            
+            self.weights -= self.learning_rate * dw
+            self.bias -= self.learning_rate * db
 
 def generate_dataset():
     X, y = make_blobs(n_samples=200, centers=2, random_state=42, cluster_std=2.0)
